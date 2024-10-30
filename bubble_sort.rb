@@ -1,5 +1,5 @@
 def bubble_sort(num_arr)
-  sorted_arr = num_arr
+  sorted_arr = num_arr.map(&:clone)
   swaps = 0.5
   limit = sorted_arr.length - 2
 
@@ -12,10 +12,9 @@ def bubble_sort(num_arr)
         sorted_arr.insert(i+1, sorted_arr.delete_at(i)) 
         swaps += 1
       end
-      puts "Loop ##{i}, array: #{sorted_arr}"
     end
   end
-  sorted_arr
+  "Original array: #{num_arr}\nSorted array: #{sorted_arr}"
 end
 
 puts bubble_sort([4,3,78,2,0,2])
